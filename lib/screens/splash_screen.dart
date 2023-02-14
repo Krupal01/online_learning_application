@@ -27,11 +27,13 @@ class _SplashScreenState extends State<SplashScreen> {
                 carouselController.animateToPage(2, curve: Curves.linear);
               }
             },
-            child: const Text(
-              "skip",
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 15,
+            child: Visibility(
+              visible: !isButtonVisible,
+              child: const Text(
+                "skip",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 15,),
               ),
             ),
           ),
