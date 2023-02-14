@@ -29,11 +29,9 @@ class _SplashScreenState extends State<SplashScreen> {
             },
             child: Visibility(
               visible: !isButtonVisible,
-              child: const Text(
+              child: Text(
                 "skip",
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 15,),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
           ),
@@ -67,7 +65,7 @@ class _SplashScreenState extends State<SplashScreen> {
               reverse: false,
               autoPlay: false,
               enlargeCenterPage: true,
-              enlargeFactor: 0.3,
+              enlargeFactor: 0.2,
               scrollDirection: Axis.horizontal,
               onPageChanged: (index, reason) {
                 setState(() {
@@ -85,41 +83,41 @@ class _SplashScreenState extends State<SplashScreen> {
           Visibility(
             visible: isButtonVisible,
             child: Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.symmetric(vertical: 20 , horizontal: 46),
               child: Row(
                 children: [
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
+                        padding: MaterialStateProperty.all(const EdgeInsets.all(12)),
                         backgroundColor: MaterialStateProperty.all(
                           HexColor("#3D5CFF"),
                         ),
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(12),),),
                       ),
-                      child: const Text(
+                      child: Text(
                         "Sign up",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                        style: Theme.of(context).textTheme.displaySmall,
                       ),
                     ),
                   ),
                   const SizedBox(
-                    width: 10,
+                    width: 20,
                   ),
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
+                        padding: MaterialStateProperty.all(const EdgeInsets.all(12)),
                         backgroundColor: MaterialStateProperty.all(
                           Colors.white,
                         ),
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(12),),),
                       ),
                       child: Text(
                         "Log in",
-                        style: TextStyle(
-                          color: HexColor("#3D5CFF"),
-                        ),
+                        style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ),
                   ),

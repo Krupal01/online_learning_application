@@ -24,18 +24,20 @@ class SplashCard extends StatelessWidget {
               height: 200,
               width: 200,
             ),
-            Text(
-              cardTitle,
-              style: const TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                cardTitle,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headlineLarge,
               ),
             ),
-            Text(
-              cardDisc,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.normal,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                cardDisc,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             )
           ],

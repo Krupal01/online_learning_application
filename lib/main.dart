@@ -29,23 +29,30 @@ class MyApp extends StatelessWidget {
             // bodyText2: TextStyle(fontSize: 14 , fontWeight: FontWeight.w400,),
             // bodyText1: TextStyle(fontSize: 12 , fontWeight: FontWeight.w400,),
 
-            headlineLarge: TextStyle(fontSize: 32 , fontWeight: FontWeight.w600 , color: HexColor("#858597"),),
-            headlineMedium: TextStyle(fontSize: 24 , fontWeight: FontWeight.w600 , color: HexColor("#858597"),),
-            headlineSmall: TextStyle(fontSize: 22 , fontWeight: FontWeight.w600 , color: HexColor("#858597"),),
+            headlineLarge: TextStyle(fontSize: 24 , fontWeight: FontWeight.w600 , color: Colors.black,),
+            headlineMedium: TextStyle(fontSize: 22 , fontWeight: FontWeight.w600 , color: Colors.black,),
+            headlineSmall: TextStyle(fontSize: 20 , fontWeight: FontWeight.w600 , color: Colors.black,),
+
             titleLarge: TextStyle(fontSize: 20 , fontWeight: FontWeight.w500 , color: HexColor("#858597"),),
             titleMedium: TextStyle(fontSize: 18 , fontWeight: FontWeight.w500 , color: HexColor("#858597"),),
-            titleSmall: TextStyle(fontSize: 16 , fontWeight: FontWeight.w500 , color: HexColor("#858597"),),
-            bodyLarge: TextStyle(fontSize: 14 , fontWeight: FontWeight.w400 , color: HexColor("#858597"),),
-            bodyMedium: TextStyle(fontSize: 12 , fontWeight: FontWeight.w400 , color: HexColor("#858597"),),
+            titleSmall: TextStyle(fontSize: 16 , fontWeight: FontWeight.w500 , color: Colors.black,),
 
-            labelLarge: TextStyle(fontSize: 32 , fontWeight: FontWeight.w600 , color: Colors.white,),
-            labelMedium: TextStyle(fontSize: 24 , fontWeight: FontWeight.w600 , color: Colors.white,),
-            labelSmall: TextStyle(fontSize: 22 , fontWeight: FontWeight.w600 , color: Colors.white,),
+            bodyLarge: TextStyle(fontSize: 16 , fontWeight: FontWeight.w400 , color: HexColor("#858597"),),
+            bodyMedium: TextStyle(fontSize: 14 , fontWeight: FontWeight.w400 , color: HexColor("#858597"),),
+            bodySmall: TextStyle(fontSize: 12 , fontWeight: FontWeight.w400 , color: HexColor("#858597"),),
+
+
+            labelLarge: TextStyle(fontSize: 24 , fontWeight: FontWeight.w600 , color: Colors.white,),
+            labelMedium: TextStyle(fontSize: 22 , fontWeight: FontWeight.w600 , color: Colors.white,),
+            labelSmall: TextStyle(fontSize: 20 , fontWeight: FontWeight.w600 , color: HexColor("#858597"),),
+
             displayLarge: TextStyle(fontSize: 20 , fontWeight: FontWeight.w500 , color: Colors.white,),
             displayMedium: TextStyle(fontSize: 18 , fontWeight: FontWeight.w500 , color: Colors.white,),
             displaySmall: TextStyle(fontSize: 16 , fontWeight: FontWeight.w500 , color: Colors.white,),
 
-          )
+
+          ),
+
       ),
       onGenerateRoute: (settings) => routes.onGenerateRoutes(settings),
       initialRoute: SPLASH_SCREEN_ROUTE,
