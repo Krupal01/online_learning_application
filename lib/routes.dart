@@ -15,7 +15,7 @@ class Routes {
   Route? onGenerateRoutes(RouteSettings settings){
     switch (settings.name){
       case SPLASH_SCREEN_ROUTE :
-        return MaterialPageRoute(builder: (context) => BlocProvider.value(value: loginCubit,child: const SplashScreen(),));
+        return MaterialPageRoute(builder: (context) => BlocProvider.value(value: loginCubit,child: SplashScreen(),));
     }
     return null;
   }
