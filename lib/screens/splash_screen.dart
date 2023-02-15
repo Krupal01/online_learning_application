@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:online_learning_application/Constants.dart';
 import 'package:online_learning_application/widget/all.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -88,7 +89,9 @@ class _SplashScreenState extends State<SplashScreen> {
                 children: [
                   Expanded(
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(SIGNUP_SCREEN_ROUTE);
+                      },
                       style: ButtonStyle(
                         padding: MaterialStateProperty.all(const EdgeInsets.all(12)),
                         backgroundColor: MaterialStateProperty.all(
@@ -107,7 +110,9 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                   Expanded(
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(LOGIN_SCREEN_ROUTE);
+                      },
                       style: ButtonStyle(
                         padding: MaterialStateProperty.all(const EdgeInsets.all(12)),
                         backgroundColor: MaterialStateProperty.all(

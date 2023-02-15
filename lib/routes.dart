@@ -16,6 +16,10 @@ class Routes {
     switch (settings.name){
       case SPLASH_SCREEN_ROUTE :
         return MaterialPageRoute(builder: (context) => BlocProvider.value(value: loginCubit,child: SplashScreen(),));
+      case SIGNUP_SCREEN_ROUTE :
+        return MaterialPageRoute(builder: (context) => BlocProvider.value(value: loginCubit,child: SignUpScreen(),));
+      case LOGIN_SCREEN_ROUTE :
+        return MaterialPageRoute(builder: (context) => BlocProvider.value(value: loginCubit,child: LoginScreen(),));
     }
     return null;
   }
