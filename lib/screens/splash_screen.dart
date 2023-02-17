@@ -90,7 +90,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).pushNamed(SIGNUP_SCREEN_ROUTE);
+                        Navigator.of(context).pushReplacementNamed(SIGNUP_SCREEN_ROUTE);
                       },
                       style: ButtonStyle(
                         padding: MaterialStateProperty.all(const EdgeInsets.all(12)),
