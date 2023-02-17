@@ -3,6 +3,8 @@ import 'package:online_learning_application/Constants.dart';
 import 'package:online_learning_application/widget/utils.dart';
 import 'package:validators/validators.dart';
 
+import '../widget/buttons.dart';
+
 class SignUpScreen extends StatefulWidget {
 
   SignUpScreen({Key? key}) : super(key: key);
@@ -116,19 +118,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             hintStyle: Theme.of(context).textTheme.bodyLarge,
                             hintText: "Enter Email",
                             fillColor: Colors.white,
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                              borderSide: BorderSide(
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                              borderSide: const BorderSide(
-                                color: Colors.grey,
-                                width: 1.0,
-                              ),
-                            ),
+                            focusedBorder: getFocusBorder(context),
+                            enabledBorder: getEnabledBorder(context),
                           ),
                         ),
                         space(vertical: 30),
@@ -155,40 +146,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             hintStyle: Theme.of(context).textTheme.bodyLarge,
                             hintText: "Password",
                             fillColor: Colors.white,
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                              borderSide: BorderSide(
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                              borderSide: const BorderSide(
-                                color: Colors.grey,
-                                width: 1.0,
-                              ),
-                            ),
+                            focusedBorder: getFocusBorder(context),
+                            enabledBorder: getEnabledBorder(context),
                           ),
                         ),
                         space(vertical: 30),
                         SizedBox(
                           width: double.infinity,
-                          child: ElevatedButton(
+                          child: SimpleButton(
                             onPressed: () {
                              _submit();
                             },
-                            style: ButtonStyle(
-                              padding: MaterialStateProperty.all(
-                                  const EdgeInsets.all(12)),
-                              backgroundColor: MaterialStateProperty.all(
-                                Theme.of(context).primaryColor,
-                              ),
-                              shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                              ),
-                            ),
                             child: Text(
                               "Created account",
                               style: Theme.of(context).textTheme.displayMedium,
