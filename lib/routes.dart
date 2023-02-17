@@ -20,6 +20,8 @@ class Routes {
         return MaterialPageRoute(builder: (context) => BlocProvider.value(value: loginCubit,child: SignUpScreen(),));
       case LOGIN_SCREEN_ROUTE :
         return MaterialPageRoute(builder: (context) => BlocProvider.value(value: loginCubit,child: LoginScreen(),));
+      case HOME_SCREEN_ROUTE :
+        return MaterialPageRoute(builder: (context) => BlocProvider.value(value: loginCubit,child: HomeScreen(),));
     }
     return null;
   }

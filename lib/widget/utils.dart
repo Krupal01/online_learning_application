@@ -25,3 +25,13 @@ OutlineInputBorder getEnabledBorder(BuildContext context){
     ),
   );
 }
+
+OutlineInputBorder getErrorBorder(BuildContext context){
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(15.0),
+    borderSide: const BorderSide(
+      color: Colors.red,
+      width: 1.0,
+    ),
+  );
+}

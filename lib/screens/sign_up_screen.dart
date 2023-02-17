@@ -148,15 +148,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             fillColor: Colors.white,
                             focusedBorder: getFocusBorder(context),
                             enabledBorder: getEnabledBorder(context),
+                            errorBorder: getErrorBorder(context),
+                            focusedErrorBorder: getErrorBorder(context)
                           ),
                         ),
                         space(vertical: 30),
                         SizedBox(
                           width: double.infinity,
                           child: SimpleButton(
-                            onPressed: () {
-                             _submit();
-                            },
+                            onPressed : () => _submit(),
                             child: Text(
                               "Created account",
                               style: Theme.of(context).textTheme.displayMedium,
