@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:online_learning_application/widget/bottombar_search_button.dart';
-import 'package:online_learning_application/widget/main_bottombar.dart';
 
 import '../routes.dart';
+import '../widget/bottombar_search_button.dart';
+import '../widget/main_bottombar.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class MessageScreen extends StatelessWidget {
+  const MessageScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(),
       bottomNavigationBar: MainBottomBar(
-        selected: 1,
+        selected: 3,
         onItemSelected: (index) {
           Routes.bottomNavigateTo(index, context);
         },

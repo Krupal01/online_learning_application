@@ -2,8 +2,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:online_learning_application/Constants.dart';
+import 'package:online_learning_application/screens/account_screen.dart';
 import 'package:online_learning_application/screens/all.dart';
 import 'package:online_learning_application/bloc/all.dart';
+import 'package:online_learning_application/screens/courses_screen.dart';
+import 'package:online_learning_application/screens/message_screen.dart';
 
 class Routes {
   late final LoginCubit loginCubit;
@@ -22,8 +25,31 @@ class Routes {
         return MaterialPageRoute(builder: (context) => BlocProvider.value(value: loginCubit,child: LoginScreen(),));
       case HOME_SCREEN_ROUTE :
         return MaterialPageRoute(builder: (context) => BlocProvider.value(value: loginCubit,child: HomeScreen(),));
+      case COURSE_SCREEN_ROUTE :
+        return MaterialPageRoute(builder: (context) => BlocProvider.value(value: loginCubit,child: CoursesScreen(),));
+      case MESSAGE_SCREEN_ROUTE :
+        return MaterialPageRoute(builder: (context) => BlocProvider.value(value: loginCubit,child: MessageScreen(),));
+      case ACCOUNT_SCREEN_ROUTE :
+        return MaterialPageRoute(builder: (context) => BlocProvider.value(value: loginCubit,child: AccountScreen(),));
     }
     return null;
+  }
+
+  static void bottomNavigateTo(int selected , BuildContext context){
+    switch (selected){
+      case 1 :
+        Navigator.of(context).pushNamed(HOME_SCREEN_ROUTE);
+        break;
+      case 2 :
+        Navigator.of(context).pushNamed(COURSE_SCREEN_ROUTE);
+        break;
+      case 3 :
+        Navigator.of(context).pushNamed(MESSAGE_SCREEN_ROUTE);
+        break;
+      case 4 :
+        Navigator.of(context).pushNamed(ACCOUNT_SCREEN_ROUTE);
+        break;
+    }
   }
 
 }
