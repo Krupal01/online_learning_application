@@ -60,10 +60,22 @@ const blackText20 = TextStyle(
   color: Colors.black,
 );
 
+const blackText18 = TextStyle(
+  fontSize:18,
+  fontWeight: FontWeight.w400,
+  color: Colors.black,
+);
+
 const blackText16 = TextStyle(
   fontSize:16,
   fontWeight: FontWeight.w400,
   color: Colors.black,
+);
+
+TextStyle primaryText20 = TextStyle(
+  fontSize:20,
+  fontWeight: FontWeight.w500,
+  color: HexColor("#3D5CFF"),
 );
 
 ButtonStyle primaryTextButton16 = ButtonStyle(
