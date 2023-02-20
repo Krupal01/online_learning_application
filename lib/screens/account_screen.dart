@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_learning_application/widget/utils.dart';
 
 import '../routes.dart';
 import '../widget/bottombar_search_button.dart';
@@ -10,7 +11,40 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: const Text(
+          "Account",
+          style: blackText24,
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image(
+                image: AssetImage("assets/images/Avatar 03.png"),
+              ),
+              space(vertical: 10),
+              ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: 4,
+                itemBuilder: (context, index) => InkWell(
+                  child: ListTile(
+                    title: Text("Data 1"),
+                    trailing: Icon(Icons.arrow_forward_ios_outlined),
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
       bottomNavigationBar: MainBottomBar(
         selected: 4,
         onItemSelected: (index) {
