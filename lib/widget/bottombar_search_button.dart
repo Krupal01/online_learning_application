@@ -4,8 +4,10 @@ import 'package:online_learning_application/widget/utils.dart';
 
 class BottomSearchButton extends StatelessWidget {
   final VoidCallback onSearchPressed;
+  final bool? selected;
 
-  const BottomSearchButton({Key? key, required this.onSearchPressed})
+  const BottomSearchButton(
+      {Key? key, required this.onSearchPressed, this.selected})
       : super(key: key);
 
   @override
@@ -22,13 +24,18 @@ class BottomSearchButton extends StatelessWidget {
             height: 70,
             width: 70,
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.white, width: 3),
-                shape: BoxShape.circle,
-                color: custom_gray,),
+              border: Border.all(color: Colors.white, width: 3),
+              shape: BoxShape.circle,
+              color: (selected ?? false)
+                  ? Theme.of(context).primaryColor
+                  : custom_gray,
+            ),
             child: Icon(
               Icons.search,
               size: 30,
-              color: Theme.of(context).primaryColor,
+              color: (selected ?? false)
+                  ? Colors.white
+                  : Theme.of(context).primaryColor,
             ),
           ),
         ),

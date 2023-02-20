@@ -68,7 +68,9 @@ class _CoursesScreenState extends State<CoursesScreen> {
                       maxChildSize: 0.50,
                       expand: false,
                       builder: (context, scrollController) =>
-                          SingleChildScrollView(controller : scrollController , child: FilterBottomSheet()),
+                          SingleChildScrollView(
+                              controller: scrollController,
+                              child: FilterBottomSheet()),
                     ),
                   );
                 },
@@ -151,7 +153,7 @@ class _CoursesScreenState extends State<CoursesScreen> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: BottomSearchButton(
-        onSearchPressed: () {},
+        onSearchPressed: () => Routes.bottomNavigateTo(5, context),
       ),
     );
   }

@@ -19,7 +19,7 @@ class MessageScreen extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: BottomSearchButton(
-        onSearchPressed: (){},
+        onSearchPressed: () => Routes.bottomNavigateTo(5, context),
       ),
     );
   }

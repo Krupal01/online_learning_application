@@ -141,8 +141,10 @@ class HomeScreen extends StatelessWidget {
                         itemCount: 2,
                         itemBuilder: (context, index) => ListTile(
                           shape: const RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15),),),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(15),
+                            ),
+                          ),
                           leading: SizedBox(
                             height: 25,
                             width: 25,
@@ -216,7 +218,7 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: BottomSearchButton(
-        onSearchPressed: () {},
+        onSearchPressed: () => Routes.bottomNavigateTo(5, context),
       ),
     );
   }
