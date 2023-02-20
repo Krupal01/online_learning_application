@@ -81,3 +81,8 @@ TextStyle primaryText20 = TextStyle(
 ButtonStyle primaryTextButton16 = ButtonStyle(
   textStyle: MaterialStateProperty.all(primaryText16),
 );
+
+
+Color light_pitch = HexColor("#F4F3FD");
+Color custom_gray = HexColor('#F4F3FD');
+Color icon_gray = HexColor("#B8B8D2");

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_learning_application/Constants.dart';
 import 'package:online_learning_application/widget/course_card.dart';
+import 'package:online_learning_application/widget/filter_searchbar.dart';
 import 'package:online_learning_application/widget/main_appbar.dart';
 import 'package:online_learning_application/widget/utils.dart';
 
@@ -48,6 +49,15 @@ class _CoursesScreenState extends State<CoursesScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              FilterSearchBar(
+                onSearchTextChange: (text) {
+
+                },
+                onFilterTap: () {
+
+                },
+              ),
+              space(vertical: 8),
               SizedBox(
                 height: 120,
                 child: ListView.builder(
