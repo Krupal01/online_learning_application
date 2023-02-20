@@ -10,3 +10,5 @@ const String COURSE_SCREEN_ROUTE = "COURSE_SCREEN_ROUTE";
 const String MESSAGE_SCREEN_ROUTE = "MESSAGE_SCREEN_ROUTE";
 const String ACCOUNT_SCREEN_ROUTE = "ACCOUNT_SCREEN_ROUTE";
 
+
+const List<String> category = ["data1","data2","data3","data4","data5"];

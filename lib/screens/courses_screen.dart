@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_learning_application/Constants.dart';
 import 'package:online_learning_application/widget/course_card.dart';
+import 'package:online_learning_application/widget/filter_bottomsheet.dart';
 import 'package:online_learning_application/widget/filter_searchbar.dart';
 import 'package:online_learning_application/widget/main_appbar.dart';
 import 'package:online_learning_application/widget/utils.dart';
@@ -50,11 +51,26 @@ class _CoursesScreenState extends State<CoursesScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FilterSearchBar(
-                onSearchTextChange: (text) {
-
-                },
+                onSearchTextChange: (text) {},
                 onFilterTap: () {
-
+                  showModalBottomSheet(
+                    context: context,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15),
+                      ),
+                    ),
+                    isScrollControlled: true,
+                    clipBehavior: Clip.hardEdge,
+                    builder: (context) => DraggableScrollableSheet(
+                      initialChildSize: 0.50,
+                      maxChildSize: 0.50,
+                      expand: false,
+                      builder: (context, scrollController) =>
+                          SingleChildScrollView(controller : scrollController , child: FilterBottomSheet()),
+                    ),
+                  );
                 },
               ),
               space(vertical: 8),
