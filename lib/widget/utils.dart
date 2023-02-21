@@ -37,8 +37,20 @@ OutlineInputBorder getErrorBorder(BuildContext context) {
   );
 }
 
+const grey300Text12 = TextStyle(
+  color: Colors.grey,
+  fontWeight: FontWeight.normal,
+  fontSize: 12,
+);
+
 const greyText16 = TextStyle(
   color: Colors.grey,
+  fontSize: 16,
+);
+
+const grey300Text16 = TextStyle(
+  color: Colors.grey,
+  fontWeight: FontWeight.normal,
   fontSize: 16,
 );
 

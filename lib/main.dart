@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
 
       ),
       onGenerateRoute: (settings) => routes.onGenerateRoutes(settings),
-      initialRoute: ACCOUNT_SCREEN_ROUTE,
+      initialRoute: MESSAGE_SCREEN_ROUTE,
     );
   }
 }
