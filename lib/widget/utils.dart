@@ -54,6 +54,16 @@ const grey300Text16 = TextStyle(
   fontSize: 16,
 );
 
+const greyText20 = TextStyle(
+  color: Colors.grey,
+  fontSize: 20,
+);
+
+const greyText24 = TextStyle(
+  color: Colors.grey,
+  fontSize: 24,
+);
+
 TextStyle primaryText16 = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w400,
@@ -84,6 +94,23 @@ const blackText16 = TextStyle(
   color: Colors.black,
 );
 
+const black300Text16 = TextStyle(
+  fontSize:16,
+  fontWeight: FontWeight.w300,
+  color: Colors.black,
+);
+
+const black300Text14 = TextStyle(
+  fontSize:14,
+  fontWeight: FontWeight.w300,
+  color: Colors.black,
+);
+const black300Text12 = TextStyle(
+  fontSize:12,
+  fontWeight: FontWeight.w300,
+  color: Colors.black,
+);
+
 TextStyle primaryText20 = TextStyle(
   fontSize:20,
   fontWeight: FontWeight.w500,
@@ -98,3 +125,7 @@ ButtonStyle primaryTextButton16 = ButtonStyle(
 Color light_pitch = HexColor("#F4F3FD");
 Color custom_gray = HexColor('#F4F3FD');
 Color icon_gray = HexColor("#B8B8D2");
+Color custom_pitch = HexColor("#D1D1D6");
+Color custom_orange = HexColor("#FF6905");
+Color custom_light_orange = HexColor("#FFEBF0");
+Color custom_light_pink = HexColor("#EFE0FF");

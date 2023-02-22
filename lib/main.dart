@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
           primaryColor: HexColor("#3D5CFF"),
+          primaryColorLight: HexColor("#CEECFE"),
           hintColor: HexColor("#858597"),
           textTheme: TextTheme(
             //we can not this bcoz it is 2018 thing and , can't use 2018 things with 2021 update
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
 
       ),
       onGenerateRoute: (settings) => routes.onGenerateRoutes(settings),
-      initialRoute: MESSAGE_SCREEN_ROUTE,
+      initialRoute: SEARCH_SCREEN_ROUTE,
     );
   }
 }

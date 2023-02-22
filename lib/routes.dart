@@ -4,6 +4,7 @@ import 'package:online_learning_application/Constants.dart';
 import 'package:online_learning_application/screens/account_screen.dart';
 import 'package:online_learning_application/screens/all.dart';
 import 'package:online_learning_application/bloc/all.dart';
+import 'package:online_learning_application/screens/course_details.dart';
 import 'package:online_learning_application/screens/courses_screen.dart';
 import 'package:online_learning_application/screens/message_screen.dart';
 import 'package:online_learning_application/screens/search_screen.dart';
@@ -65,6 +66,12 @@ class Routes {
                   value: loginCubit,
                   child: SearchScreen(),
                 ));
+      case COURSE_DETAILS_SCREEN:
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider.value(
+              value: loginCubit,
+              child: CourseDetailsScreen(),
+            ));
     }
     return null;
   }

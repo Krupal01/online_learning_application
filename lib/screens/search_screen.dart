@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_learning_application/Constants.dart';
 
 import '../routes.dart';
 import '../widget/bottombar_search_button.dart';
@@ -90,11 +91,15 @@ class _SearchScreenState extends State<SearchScreen> {
                 },
               ),
             ),
+            space(vertical: 8),
+            Text("Result" , style: blackText20,),
+            space(vertical: 8),
             Expanded(
               child: ListView.builder(
                 itemCount: 10,
                 itemBuilder: (context, index) {
                   return CourseCard(
+                    onTap:() => Navigator.of(context).pushNamed(COURSE_DETAILS_SCREEN),
                     title: "Product",
                     desc: "robert",
                     price: "92",

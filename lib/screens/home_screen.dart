@@ -110,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                       itemCount: 3,
                       itemBuilder: (context, index) => Card(
                         clipBehavior: Clip.hardEdge,
-                        color: Colors.cyan,
+                        color: Theme.of(context).primaryColorLight,
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(15)),
                         ),
@@ -186,7 +186,7 @@ class HomeScreen extends StatelessWidget {
                       itemCount: 3,
                       itemBuilder: (context, index) => Card(
                         clipBehavior: Clip.hardEdge,
-                        color: Colors.cyan,
+                        color: Theme.of(context).primaryColorLight,
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(15)),
                         ),
