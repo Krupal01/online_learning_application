@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
 
       ),
       onGenerateRoute: (settings) => routes.onGenerateRoutes(settings),
-      initialRoute: SEARCH_SCREEN_ROUTE,
+      initialRoute: SPLASH_SCREEN_ROUTE,
     );
   }
 }
