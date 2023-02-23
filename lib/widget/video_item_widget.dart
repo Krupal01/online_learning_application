@@ -14,6 +14,10 @@ class _VideoItemWidgetState extends State<VideoItemWidget> {
   bool isPressed = false;
 
   void changeButtonState(){
+    if(widget.onTap != null){
+      widget.onTap!();
+    }
+
     setState(() {
       isPressed = !isPressed;
     });
@@ -51,7 +55,6 @@ class _VideoItemWidgetState extends State<VideoItemWidget> {
         ElevatedButton(
           onPressed: () {
             changeButtonState();
-            widget.onTap!();
           },
           child: Icon(isPressed ? Icons.pause : Icons.play_arrow ),
           style: ButtonStyle(

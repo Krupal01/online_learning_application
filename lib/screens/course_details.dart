@@ -14,37 +14,42 @@ class CourseDetailsScreen extends StatefulWidget {
 }
 
 class _CourseDetailsScreenState extends State<CourseDetailsScreen> {
-  late VideoPlayerController _controller;
-  late Future<void> _initializeVideoPlayerFuture;
+  VideoPlayerController? _controller;
 
   @override
   void initState() {
-    setVideo(null);
     super.initState();
   }
 
   void setVideo(String? url) {
-    setState(() {
-      if (url != null) {
-        _controller = VideoPlayerController.network(
-          url,
-        );
-        _initializeVideoPlayerFuture = _controller.initialize();
-        _controller.setLooping(true);
-        _controller.play();
-      } else {}
-    });
+    if (url != null) {
+      _controller = VideoPlayerController.network(
+        url,
+      );
+      _controller?.initialize().then((value) => setState(() {
+        _controller?.play();
+      }));
+      _controller?.setLooping(true);
+    }
+
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
-    _controller.dispose();
+    _controller?.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    if(_controller != null) {
+      print(_controller.toString() + "---" +
+          _controller!.value.isInitialized.toString() + "---" +
+          _controller!.value.isBuffering.toString());
+    }else{
+      print("controller is null");
+    }
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -70,17 +75,24 @@ class _CourseDetailsScreenState extends State<CourseDetailsScreen> {
               height: 180,
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(15, 5, 15, 20),
-                child: Image(
-                  image: AssetImage(
-                    "assets/images/Ads.png",
-                  ),
-                  height: 180,
-                ),
+                child: (_controller != null && _controller!.value.isInitialized)
+                    ? (_controller!.value.isBuffering)
+                        ? const CircularProgressIndicator()
+                        : AspectRatio(
+                            aspectRatio: _controller!.value.aspectRatio,
+                            child: VideoPlayer(_controller!),
+                          )
+                    : const Image(
+                        image: AssetImage(
+                          "assets/images/Ads.png",
+                        ),
+                        height: 180,
+                      ),
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 180),
+            padding: const EdgeInsets.only(top: 230),
             child: SizedBox(
               width: double.infinity,
               child: Card(
@@ -127,13 +139,22 @@ class _CourseDetailsScreenState extends State<CourseDetailsScreen> {
                               ],
                             ),
                           ),
-                          Text("\$71.00" ,style: primaryText20,)
+                          Text(
+                            "\$71.00",
+                            style: primaryText20,
+                          )
                         ],
                       ),
                       space(vertical: 5),
                       Expanded(
                         child: ListView.builder(
-                          itemBuilder: (context, index) => VideoItemWidget(index: index.toString(),),
+                          itemBuilder: (context, index) => VideoItemWidget(
+                            index: index.toString(),
+                            onTap: () {
+                              setVideo(
+                                  'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4');
+                            },
+                          ),
                           itemCount: 20,
                         ),
                       ),
@@ -142,7 +163,9 @@ class _CourseDetailsScreenState extends State<CourseDetailsScreen> {
                           Expanded(
                             flex: 1,
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: (){
+                                }
+                              ,
                               child: Icon(
                                 Icons.star_border,
                                 color: custom_orange,
